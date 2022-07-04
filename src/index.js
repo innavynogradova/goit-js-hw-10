@@ -16,7 +16,6 @@ const refs = {
 
 refs.input.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));
 
-
 function onSearch(event) {
 
     inputValue = event.target.value.trim();
@@ -32,7 +31,7 @@ function onSearch(event) {
                 return refs.countryList.innerHTML = buildCountryListMarkup(data);
             }
             else {
-                Notify.info('Too many matches found. Please enter a more specific name.');
+                return Notify.info('Too many matches found. Please enter a more specific name.');
             }
         })
         .catch(err => {
